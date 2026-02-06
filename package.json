@@ -1,0 +1,29 @@
+{
+  "name": "node-project",
+  "version": "1.0.0",
+  "description": "Flight Ticket Management System",
+  "keywords": [
+    "JavaScript",
+    "Node.js"
+  ],
+  "homepage": "https://github.com/sontireddyprashanth/Ticket-Management-System#readme",
+  "bugs": {
+    "url": "https://github.com/sontireddyprashanth/Ticket-Management-System/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sontireddyprashanth/Ticket-Management-System.git"
+  },
+  "license": "ISC",
+  "author": "Prashanth",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.1.5"
+  }
+}
