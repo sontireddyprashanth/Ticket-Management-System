@@ -4,17 +4,18 @@ import { customerAuth } from './middleware/auth.js';
 import { Customer } from './models/customer.js';
 const app = express();
 
+app.use(express.json());
+
 app.post('/customer', customerAuth, async(req, res) => {
-    const customer = new Customer({
-        firstName: "John",
-        lastName: "Doe",
-        email: "johndoe@gmail.com",
-        mobile: 987654321,
-        savedcards: 1234567890234,
-        age: 34
-    });
-    await customer.save();
-    res.send("Data added successfully");
+    const customer = new Customer(req.body);
+    
+    try{
+        await customer.save();
+        res.send("Data added successfully");
+    }catch(err){
+        req.status(400).send("Err adding data:", err.message);
+    }
+  
 });
 
 connectDB()
