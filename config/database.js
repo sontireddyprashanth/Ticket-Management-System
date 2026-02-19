@@ -1,8 +1,13 @@
+import dotEnv from 'dotenv';
+dotEnv.config();
 import mongoose from 'mongoose';
+
+
+const PORT = process.env.PORT || 3000;
 
 export const connectDB = async() => {
     await mongoose.connect(
-        'mongodb+srv://prashanthtf7_db_user:CCDCHBby7qsevqV8@sonti.fiif3zn.mongodb.net/Ticket_Management_System');
+        process.env.MONGO_URI);
 };
 
 
